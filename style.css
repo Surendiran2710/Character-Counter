@@ -1,0 +1,49 @@
+body {
+    background: url('background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 400px;
+    margin: 30vh auto 0 auto;
+    border: 2px solid rgba(255, 255, 255, .7);
+    background-color: rgba(25, 255, .5, .5);
+    color: rgb(133, 29, 29);
+    
+    border-radius: 25px;
+    padding: 30px;
+}
+
+.container h1 {
+    text-align: center;
+    margin-top: 5px;
+    padding: 5px;
+    margin-bottom: 15px;
+    font-size: xx-large;
+    
+
+}
+.text{
+    font-weight: bold;
+}
+
+#message {
+    background-color: transparent;
+    margin-top: 10px;
+    
+}
+
+
+.counter {
+  margin-top: 10px;
+  
+}
+.warning {
+  color: red;
+  margin-top: 10px;
+  display: none;
+}

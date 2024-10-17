@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Counter</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>INPUT MESSAGE</h1>
+        <label for="message" class="text">Type your message (200 characters max):</label>
+        <textarea id="message" rows="8" cols="50" placeholder="Start typing your message..."></textarea>
+        <div class="counter" id="counter">0/200 characters remaining</div>
+        <div class="warning" id="warning">You have exceeded the maximum character limit!</div>
+    </div>
+
+    <script>
+        const message = document.getElementById('message');
+        const counter = document.getElementById('counter');
+        const warning = document.getElementById('warning');
+        const maxChars = 200;
+
+        message.addEventListener('input', function() {
+            const currentLength = message.value.length;
+            const remainingChars = maxChars - currentLength;
+
+            if (remainingChars >= 0) {
+                counter.textContent = `${currentLength}/${maxChars} characters typed, ${remainingChars} remaining`;
+                warning.style.display = 'none'; // Hide the warning if the user is within the limit
+            } else {
+                message.value = message.value.substring(0, maxChars); // Prevent further typing
+                counter.textContent = `${maxChars}/${maxChars} characters typed, 0 remaining`;
+                warning.style.display = 'block'; // Show the warning when limit is exceeded
+            }
+        });
+    </script>
+
+</body>
+
+</html>
